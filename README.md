@@ -53,7 +53,7 @@ A comprehensive full-stack application designed to simulate Airbnb's booking pla
   - Coordinate cross-functional teams.
   - Gather stakeholder feedback for iterations.
  
-  ## Technology Stack
+## Technology Stack
 
 ### Django
 - **Purpose**: A high-level Python web framework used to build the backend logic, RESTful/GraphQL APIs, and handle user authentication and authorization.
