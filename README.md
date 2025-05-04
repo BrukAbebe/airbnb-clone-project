@@ -16,3 +16,47 @@ A comprehensive full-stack application designed to simulate Airbnb's booking pla
 - **API**: GraphQL
 - **Containerization**: Docker
 - **CI/CD**: GitHub Actions
+
+## Team Roles
+
+### Backend Developer
+- **Description**: Develops server-side logic, APIs, and integrates with databases.
+- **Responsibilities**:
+  - Build RESTful/GraphQL APIs using Django.
+  - Implement user authentication and booking logic.
+  - Collaborate with DBAs to optimize database interactions.
+
+### Database Administrator (DBA)
+- **Description**: Manages database design, performance, and security.
+- **Responsibilities**:
+  - Design and maintain the MySQL schema.
+  - Optimize queries and ensure data integrity.
+  - Configure backups and access controls.
+
+### DevOps Engineer
+- **Description**: Automates deployment and infrastructure management.
+- **Responsibilities**:
+  - Set up CI/CD pipelines with GitHub Actions.
+  - Containerize the app using Docker.
+  - Monitor cloud infrastructure and scalability.
+
+### Security Engineer
+- **Description**: Safeguards the application against threats.
+- **Responsibilities**:
+  - Secure APIs with JWT/OAuth2.
+  - Perform vulnerability testing.
+  - Encrypt sensitive user data.
+
+### QA Engineer
+- **Description**: Ensures software reliability and quality.
+- **Responsibilities**:
+  - Write automated tests for backend endpoints.
+  - Validate user workflows (e.g., booking, payments).
+  - Report and track bugs to resolution.
+
+### Product Manager
+- **Description**: Leads project planning and execution.
+- **Responsibilities**:
+  - Define feature priorities and timelines.
+  - Coordinate cross-functional teams.
+  - Gather stakeholder feedback for iterations.
