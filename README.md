@@ -9,14 +9,6 @@ A comprehensive full-stack application designed to simulate Airbnb's booking pla
 - Implement advanced security measures for APIs and user data protection.
 - Design CI/CD pipelines using GitHub Actions for automated testing and deployment.
 
-## Tech Stack
-
-- **Backend Framework**: Django (Python)
-- **Database**: MySQL
-- **API**: GraphQL
-- **Containerization**: Docker
-- **CI/CD**: GitHub Actions
-
 ## Team Roles
 
 ### Backend Developer
@@ -60,3 +52,20 @@ A comprehensive full-stack application designed to simulate Airbnb's booking pla
   - Define feature priorities and timelines.
   - Coordinate cross-functional teams.
   - Gather stakeholder feedback for iterations.
+ 
+  ## Technology Stack
+
+### Django
+- **Purpose**: A high-level Python web framework used to build the backend logic, RESTful/GraphQL APIs, and handle user authentication and authorization.
+
+### MySQL
+- **Purpose**: A relational database management system for storing and managing structured data, such as user profiles, property listings, and booking transactions.
+
+### GraphQL
+- **Purpose**: A query language for APIs that allows clients to request exactly the data they need, improving efficiency and flexibility compared to traditional REST APIs.
+
+### Docker
+- **Purpose**: A containerization platform used to create isolated environments for development, testing, and deployment, ensuring consistency across all stages of the project.
+
+### GitHub Actions
+- **Purpose**: A CI/CD tool integrated with GitHub to automate workflows, including testing, code quality checks, and deployment to cloud platforms.
