@@ -1,71 +1,130 @@
 # Airbnb Clone Project
 
-A comprehensive full-stack application designed to simulate Airbnb's booking platform, focusing on backend systems, database design, API security, and modern DevOps practices.
+A full-stack clone of Airbnb focusing on backend architecture, database design, API security, and CI/CD workflows.
 
-## Project Goals
+---
 
-- Master collaborative team workflows using GitHub for version control and project management.
-- Deepen understanding of backend architecture and database design principles with Django and MySQL.
-- Implement advanced security measures for APIs and user data protection.
-- Design CI/CD pipelines using GitHub Actions for automated testing and deployment.
+## 🏆 Project Goals
+- **User Management**: Secure registration, authentication, and profile updates.
+- **Property Management**: Enable hosts to list, edit, and delete properties.
+- **Booking System**: Handle reservations with check-in/out dates.
+- **Payment Processing**: Integrate a secure payment gateway.
+- **Review System**: Allow users to leave property reviews.
+- **Scalability**: Optimize database performance and ensure API reliability.
 
-## Team Roles
+---
+
+## 👥 Team Roles
 
 ### Backend Developer
-- **Description**: Develops server-side logic, APIs, and integrates with databases.
-- **Responsibilities**:
-  - Build RESTful/GraphQL APIs using Django.
-  - Implement user authentication and booking logic.
-  - Collaborate with DBAs to optimize database interactions.
+- **Responsibilities**: Develop APIs (REST/GraphQL), implement authentication, and integrate databases.
 
 ### Database Administrator (DBA)
-- **Description**: Manages database design, performance, and security.
-- **Responsibilities**:
-  - Design and maintain the MySQL schema.
-  - Optimize queries and ensure data integrity.
-  - Configure backups and access controls.
+- **Responsibilities**: Design schema, optimize queries, and ensure data integrity.
 
 ### DevOps Engineer
-- **Description**: Automates deployment and infrastructure management.
-- **Responsibilities**:
-  - Set up CI/CD pipelines with GitHub Actions.
-  - Containerize the app using Docker.
-  - Monitor cloud infrastructure and scalability.
-
-### Security Engineer
-- **Description**: Safeguards the application against threats.
-- **Responsibilities**:
-  - Secure APIs with JWT/OAuth2.
-  - Perform vulnerability testing.
-  - Encrypt sensitive user data.
+- **Responsibilities**: Configure CI/CD pipelines, manage Docker containers, and deploy to cloud platforms.
 
 ### QA Engineer
-- **Description**: Ensures software reliability and quality.
-- **Responsibilities**:
-  - Write automated tests for backend endpoints.
-  - Validate user workflows (e.g., booking, payments).
-  - Report and track bugs to resolution.
+- **Responsibilities**: Write automated tests, validate user workflows, and ensure bug-free releases.
 
-### Product Manager
-- **Description**: Leads project planning and execution.
-- **Responsibilities**:
-  - Define feature priorities and timelines.
-  - Coordinate cross-functional teams.
-  - Gather stakeholder feedback for iterations.
- 
-## Technology Stack
+---
+
+## ⚙️ Technology Stack
 
 ### Django
-- **Purpose**: A high-level Python web framework used to build the backend logic, RESTful/GraphQL APIs, and handle user authentication and authorization.
+- **Purpose**: Backend framework for building APIs and handling business logic.
 
-### MySQL
-- **Purpose**: A relational database management system for storing and managing structured data, such as user profiles, property listings, and booking transactions.
+### PostgreSQL
+- **Purpose**: Relational database for structured storage of users, properties, and bookings.
 
 ### GraphQL
-- **Purpose**: A query language for APIs that allows clients to request exactly the data they need, improving efficiency and flexibility compared to traditional REST APIs.
+- **Purpose**: Flexible querying for efficient data retrieval.
 
 ### Docker
-- **Purpose**: A containerization platform used to create isolated environments for development, testing, and deployment, ensuring consistency across all stages of the project.
+- **Purpose**: Containerization for consistent development and deployment.
 
 ### GitHub Actions
-- **Purpose**: A CI/CD tool integrated with GitHub to automate workflows, including testing, code quality checks, and deployment to cloud platforms.
+- **Purpose**: Automate testing and deployment workflows.
+
+### JWT (JSON Web Tokens)
+- **Purpose**: Secure user authentication and authorization.
+
+---
+
+## 🗃️ Database Design
+
+### Entities & Relationships
+
+1. **Users**
+   - Fields: `id`, `username`, `email`, `password_hash`, `created_at`
+   - Relationships: One user → Many properties, bookings, reviews.
+
+2. **Properties**
+   - Fields: `id`, `title`, `price`, `location`, `host_id` (FK to Users)
+   - Relationships: One property → Many bookings, reviews.
+
+3. **Bookings**
+   - Fields: `id`, `start_date`, `end_date`, `user_id` (FK to Users), `property_id` (FK to Properties)
+   - Relationships: Belongs to one user and one property.
+
+4. **Reviews**
+   - Fields: `id`, `rating`, `comment`, `user_id` (FK to Users), `property_id` (FK to Properties)
+   - Relationships: Belongs to one user and one property.
+
+5. **Payments**
+   - Fields: `id`, `amount`, `status`, `booking_id` (FK to Bookings), `user_id` (FK to Users)
+   - Relationships: Linked to a booking and user.
+
+---
+
+## 🛠️ Feature Breakdown
+
+### User Management
+- Allows registration, login, and profile updates. Ensures secure access to the platform.
+
+### Property Management
+- Hosts can list properties with details like price and location. Core to the marketplace model.
+
+### Booking System
+- Users reserve properties for specific dates. Manages availability and conflicts.
+
+### Payment Processing
+- Integrates with payment gateways (e.g., Stripe) to handle transactions securely.
+
+### Review System
+- Builds trust via user-generated reviews and ratings for properties.
+
+---
+
+## 🔒 API Security
+
+### Key Measures
+1. **Authentication**: JWT tokens to verify user identity.
+2. **Authorization**: Role-based access (e.g., only hosts can edit properties).
+3. **Rate Limiting**: Prevent API abuse (e.g., 100 requests/minute).
+4. **HTTPS**: Encrypt data in transit.
+5. **Input Validation**: Sanitize user inputs to prevent SQL injection.
+
+### Importance
+- **User Data**: Protect sensitive info like emails and passwords.
+- **Payments**: Prevent fraud with encrypted transactions.
+- **Availability**: Ensure APIs remain responsive under load.
+
+---
+
+## 🔄 CI/CD Pipeline
+
+### What is CI/CD?
+- **Continuous Integration (CI)**: Automate code testing on every commit.
+- **Continuous Deployment (CD)**: Deploy validated code to production automatically.
+
+### Tools Used
+- **GitHub Actions**: Run tests, lint code, and deploy.
+- **Docker**: Ensure consistency across environments.
+- **AWS/Heroku**: Cloud platforms for deployment.
+
+### Why It Matters
+- **Faster Releases**: Automate repetitive tasks.
+- **Fewer Errors**: Catch bugs early in development.
+- **Scalability**: Easily deploy updates to handle growing traffic.
